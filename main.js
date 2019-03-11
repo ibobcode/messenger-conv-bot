@@ -106,6 +106,14 @@ console.log("START");
     if (lastMessage !== saved) {
       console.log("Potential command:", lastMessage);
       saved = lastMessage;
+      if (lastMessage === '@help') {
+        await focusInput(page);
+        await typeText(page, 'AVAILABLE COMMANDS: ');
+        for (let action of actions) {
+          await typeText(page, `${action.trigger.content}, `);
+        }
+        await page.keyboard.press("Enter");
+      }
       let action = await actionParser(lastMessage);
       console.log("ACTION:", action);
       if (action) {
@@ -124,7 +132,6 @@ console.log("START");
 app.get('/', function (req, res) {
   res.send('Alive!');
 })
-console.log('PORT', process.env.PORT);
 app.listen(process.env.PORT, function () {
   console.log('Example app listening on port 3000!');
 })

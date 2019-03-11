@@ -67,7 +67,7 @@ console.log("START");
 
 (async () => {
   actions = await request({
-    uri: "https://gist.githubusercontent.com/ibobcode/683c71674757c931ccceba3cec2d0385/raw/f4f64f74cd088c397e6a7c0110628341244b1ea9/convBotActions.json",
+    uri: "https://raw.githubusercontent.com/ibobcode/messenger-conv-bot/master/actions.json",
   });
   actions = JSON.parse(actions);
   const browser = await puppeteer.launch({

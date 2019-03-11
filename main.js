@@ -124,7 +124,7 @@ console.log("START");
 app.get('/', function (req, res) {
   res.send('Alive!');
 })
-
-app.listen(3000, function () {
+console.log('PORT', process.env.PORT);
+app.listen(process.env.PORT, function () {
   console.log('Example app listening on port 3000!');
 })

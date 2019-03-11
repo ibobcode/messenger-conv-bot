@@ -63,6 +63,7 @@ async function uploadPicture(page, upload) {
   }
 }
 
+
 console.log("START");
 
 (async () => {

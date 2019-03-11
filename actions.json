@@ -191,5 +191,17 @@
       "dataPath": ["data", "children", 0, "data", "url"],
       "action": "upload"
     }
+  },
+  {
+    "name": "Get a doggo",
+    "trigger": {
+      "type": "text",
+      "content": "@dailydog"
+    },
+    "fetchApi": {
+      "apiUrl": "https://www.reddit.com/r/dog.json?limit=1",
+      "dataPath": ["data", "children", 0, "data", "url"],
+      "action": "upload"
+    }
   }
 ]

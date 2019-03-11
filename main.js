@@ -65,11 +65,12 @@ async function uploadPicture(page, upload) {
   }
 }
 
-async function uploadPicture(page, fetch) {
+async function fetchApi(page, fetch) {
   if (fetch) {
     let data = await request({
       uri: fetch.apiUrl,
     });
+    data = JSON.parse(data);
     fetch.dataPath.forEach(path => {
       data = data[path];
     });
@@ -99,7 +100,7 @@ console.log("START");
   //   navigation: 10000, 
   //   waitForSelector: 12000,
   // });
-  await page.goto("https://www.messenger.com/t/2323944144316918");
+  await page.goto("https://www.messenger.com/t/1037102783049142");
   await page.evaluate(text => {
     document.getElementById("email").value = text;
   }, process.env.MAIL);
@@ -139,7 +140,7 @@ console.log("START");
         await page.keyboard.press("Enter");
       }
     }
-    await page.waitFor(1000);
+    await page.waitFor(500);
   }
 })();
 

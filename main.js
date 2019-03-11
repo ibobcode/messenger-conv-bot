@@ -2,6 +2,8 @@ require('dotenv').config()
 const puppeteer = require("puppeteer");
 const fs = require("fs");
 const request = require("request-promise");
+const express = require('express');
+const app = express();
 
 let actions = [];
 
@@ -118,3 +120,11 @@ console.log("START");
     await page.waitFor(1000);
   }
 })();
+
+app.get('/', function (req, res) {
+  res.send('Alive!');
+})
+
+app.listen(3000, function () {
+  console.log('Example app listening on port 3000!');
+})

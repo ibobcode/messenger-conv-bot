@@ -65,6 +65,19 @@ async function uploadPicture(page, upload) {
   }
 }
 
+async function uploadPicture(page, fetch) {
+  if (fetch) {
+    let data = await request({
+      uri: fetch.apiUrl,
+    });
+    fetch.dataPath.forEach(path => {
+      data = data[path];
+    });
+    console.log(data);
+    await uploadPicture(page, [data]);
+  }
+}
+
 
 console.log("START");
 
@@ -122,6 +135,7 @@ console.log("START");
         await typeText(page, action.text);
         await applyAttachement(page, action.link);
         await uploadPicture(page, action.upload);
+        await fetchApi(page, action.fetchApi);
         await page.keyboard.press("Enter");
       }
     }

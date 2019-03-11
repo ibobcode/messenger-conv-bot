@@ -180,4 +180,16 @@
     "text": "raconte nous une blague !",
     "tags": ["@Dylan"]
   }
+  {
+    "name": "Get a gap",
+    "trigger": {
+      "type": "text",
+      "content": "@sendnudes"
+    },
+    "fetchApi": {
+      "apiUrl": "https://www.reddit.com/r/thighgap.json?limit=1",
+      "dataPath": ["data", "children", 0, "data", "url"],
+      "action": "upload"
+    }
+  }
 ]

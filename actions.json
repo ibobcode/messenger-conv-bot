@@ -172,13 +172,23 @@
     ]
   },
   {
+    "name": "Trap",
+    "trigger": {
+      "type": "text",
+      "content": "@trap"
+    },
+    "upload": [
+      "https://www.thegatewayonline.ca/wp-content/uploads/2019/01/maxresdefault-1-780x405.jpg"
+    ]
+  },
+  {
     "name": "Oyan Joke",
     "trigger": {
       "type": "text",
       "content": "@oyanjoke"
     },
     "text": "raconte nous une blague !",
-    "tags": ["@Oïhan"]
+    "tags": [ "@Oïhan" ]
   },
   {
     "name": "Get a gap",
@@ -188,7 +198,7 @@
     },
     "fetchApi": {
       "apiUrl": "https://www.reddit.com/r/thighgap.json?limit=1",
-      "dataPath": ["data", "children", 0, "data", "url"],
+      "dataPath": [ "data", "children", 0, "data", "url" ],
       "action": "upload"
     }
   },
@@ -200,7 +210,7 @@
     },
     "fetchApi": {
       "apiUrl": "https://www.reddit.com/r/dog.json?limit=1",
-      "dataPath": ["data", "children", 0, "data", "url"],
+      "dataPath": [ "data", "children", 0, "data", "url" ],
       "action": "upload"
     }
   }
